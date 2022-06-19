@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+body {
+  background: #F9F6EE;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1600px;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background: #171717;
+  position: relative;
+  height: 10rem;
+  gap: 1rem;
+}
+header nav {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0 3rem;
+}
+header nav a {
+  color: #F9F6EE;
+  font-size: 2rem;
+  position: relative;
+  text-decoration: none;
+}
+header nav a:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  background-color: #8FBC8F;
+  z-index: 3;
+  left: 50%;
+  transition: all 0.2s ease-out;
+}
+header nav a:hover::after {
+  width: 100%;
+  left: 1px;
+}
+header .hamburger {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+header .mobile-nav {
+  display: none;
+}
+@media (max-width: 992px) {
+  header nav {
+    display: none;
+  }
+  header .hamburger {
+    display: block;
+    z-index: 3;
+  }
+  header .hamburger .bar, header .hamburger:after, header .hamburger:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: #F9F6EE;
+    margin: 6px 0px;
+    transition: 0.4s;
+  }
+  header .hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-0.9rem, 0.6rem);
+  }
+  header .hamburger.is-active:after {
+    transform: rotate(45deg) translate(-0.9rem, -0.6rem);
+  }
+  header .hamburger.is-active .bar {
+    opacity: 0;
+  }
+  header .mobile-nav {
+    margin: 0 auto;
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #171717;
+    top: 10px;
+    right: -200vw;
+    transition: 0.6s;
+    padding: 0;
+  }
+  header .mobile-nav a {
+    font-size: 6rem;
+  }
+  header .mobile-nav.is-active {
+    right: 0;
+  }
+}
+
+footer {
+  background: #171717;
+  width: 100%;
+  height: 100px;
+}
+
+/*# sourceMappingURL=style.css.map */
