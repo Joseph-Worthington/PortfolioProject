@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-size: 10px;
+  box-sizing: border-box;
 }
 
 body {
@@ -11,16 +12,52 @@ body {
 
 .container {
   max-width: 1600px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .container {
+    margin: 24px;
+    gap: 26px 0;
+  }
+}
+
+p, span, h1, h2, h3, h4, h5, h6, a {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2.75rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
 }
 
 header {
-  display: flex;
-  justify-content: end;
-  align-items: center;
   background: #171717;
-  position: relative;
-  height: 10rem;
-  gap: 1rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+}
+header .container {
+  padding: 0 24px;
+  width: 100%;
 }
 header nav {
   list-style-type: none;
@@ -51,7 +88,8 @@ header nav a:hover::after {
 }
 header .hamburger {
   display: none;
-  position: absolute;
+  grid-column: 4;
+  justify-self: end;
   right: 2rem;
   width: 35px;
   height: 35px;
@@ -63,6 +101,11 @@ header .hamburger {
 }
 header .mobile-nav {
   display: none;
+}
+header .logo {
+  max-width: 55px;
+  justify-self: start;
+  z-index: 99;
 }
 @media (max-width: 992px) {
   header nav {
@@ -107,7 +150,7 @@ header .mobile-nav {
     padding: 0;
   }
   header .mobile-nav a {
-    font-size: 6rem;
+    font-size: 5rem;
   }
   header .mobile-nav.is-active {
     right: 0;
@@ -117,7 +160,96 @@ header .mobile-nav {
 footer {
   background: #171717;
   width: 100%;
-  height: 100px;
+  padding: 1px;
+}
+footer img {
+  max-height: 5rem;
+  max-width: 5rem;
+  border: 50%;
+}
+footer .developer-signature {
+  width: 50px;
+  display: flex;
+  grid-column: 4;
+}
+footer .developer-signature img {
+  max-height: 15px;
+}
+footer .developer-signature span {
+  font-size: 0.5rem;
+  color: #F9F6EE;
+}
+
+.hero-block {
+  height: 89vh;
+}
+.hero-block .profile-picture {
+  grid-column: 1/span 4;
+}
+.hero-block .opening-statement {
+  grid-column: 1/span 4;
+}
+
+.hero-block-variant {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-block-variant h1 {
+  grid-column: 1/span 4;
+}
+
+.intro-block {
+  background-color: #171717;
+  padding: 7.5rem 0;
+}
+.intro-block h2 {
+  grid-column: 1/span 4;
+  color: #F9F6EE;
+}
+.intro-block p {
+  grid-column: 1/span 4;
+  color: #F9F6EE;
+  text-align: center;
+}
+.intro-block img {
+  grid-column: 2/span 2;
+}
+
+.project-highlight {
+  text-align: center;
+  height: 100vh;
+  overflow: scroll;
+}
+.project-highlight img {
+  background: #D9D9D9;
+  min-height: 145px;
+  min-width: 145px;
+}
+.project-highlight .highlight-card-left {
+  grid-column: 1/span 4;
+  justify-self: start;
+}
+.project-highlight .highlight-card-right {
+  grid-column: 1/span 4;
+  justify-self: end;
+}
+
+.about-content-block {
+  margin: 10rem 0;
+}
+.about-content-block .container {
+  column-gap: 1rem;
+}
+.about-content-block .profile-pic {
+  grid-column: 3/span 2;
+}
+.about-content-block p:first-of-type {
+  grid-column: 1/span 2;
+}
+.about-content-block p:nth-child(n+3) {
+  grid-column: 1/span 4;
 }
 
 /*# sourceMappingURL=style.css.map */
