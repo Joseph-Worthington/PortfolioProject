@@ -24,7 +24,7 @@ body {
   }
 }
 
-p, span, h1, h2, h3, h4, h5, h6, a {
+p, span, h1, h2, h3, h4, h5, h6, a, li {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-weight: 400;
 }
@@ -47,6 +47,10 @@ p {
 
 img {
   max-width: 100%;
+}
+
+ul {
+  list-style: none;
 }
 
 header {
@@ -105,7 +109,7 @@ header .mobile-nav {
 header .logo {
   max-width: 55px;
   justify-self: start;
-  z-index: 99;
+  z-index: 100;
 }
 @media (max-width: 992px) {
   header nav {
@@ -113,7 +117,7 @@ header .logo {
   }
   header .hamburger {
     display: block;
-    z-index: 3;
+    z-index: 100;
   }
   header .hamburger .bar, header .hamburger:after, header .hamburger:before {
     content: "";
@@ -148,6 +152,7 @@ header .logo {
     right: -200vw;
     transition: 0.6s;
     padding: 0;
+    z-index: 99;
   }
   header .mobile-nav a {
     font-size: 5rem;
@@ -250,6 +255,59 @@ footer .developer-signature span {
 }
 .about-content-block p:nth-child(n+3) {
   grid-column: 1/span 4;
+}
+
+@media (max-width: 576px) {
+  .projects .project-card {
+    grid-column: 1/span 4;
+    justify-self: start;
+    position: relative;
+  }
+  .projects .project-card .info-card {
+    background: #171717;
+    color: #F9F6EE;
+  }
+  .projects .project-card .info-card-img {
+    position: absolute;
+    height: 40vw;
+    width: 40vw;
+    background-color: #8FBC8F;
+    left: 45vw;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .projects .project-card-reverse {
+    grid-column: 1/span 4;
+    justify-self: end;
+    position: relative;
+  }
+  .projects .project-card-reverse .info-card {
+    background: #F9F6EE;
+    color: #171717;
+  }
+  .projects .project-card-reverse .info-card-img {
+    position: absolute;
+    height: 40vw;
+    width: 40vw;
+    background-color: #8FBC8F;
+    right: 45vw;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .projects .info-card {
+    max-width: 65vw;
+    padding: 0 2rem;
+    opacity: 0.8;
+    position: relative;
+  }
+  .projects .info-card h2 {
+    padding: 2rem 0;
+  }
+  .projects .info-card ul {
+    padding: 2rem 0;
+    display: flex;
+    gap: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
