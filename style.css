@@ -11,22 +11,25 @@ body {
 }
 
 .container {
-  max-width: 1600px;
+  max-width: 1400px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   align-items: center;
   justify-items: center;
+  margin: 0 auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .container {
     margin: 24px;
     gap: 26px 0;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 p, span, h1, h2, h3, h4, h5, h6, a, li {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 h1 {
@@ -67,7 +70,7 @@ header nav {
   list-style-type: none;
   display: flex;
   gap: 2rem;
-  padding: 0 3rem;
+  grid-column: 12;
 }
 header nav a {
   color: #F9F6EE;
@@ -186,13 +189,31 @@ footer .developer-signature span {
 }
 
 .hero-block {
-  height: 89vh;
+  height: 50vh;
+  height: 100%;
+  padding: 6.5rem 0;
 }
 .hero-block .profile-picture {
   grid-column: 1/span 4;
 }
 .hero-block .opening-statement {
-  grid-column: 1/span 4;
+  grid-column: 9/span 4;
+  justify-self: end;
+}
+.hero-block .opening-statement h2 {
+  text-align: right;
+}
+@media (max-width: 992px) {
+  .hero-block {
+    padding: 0;
+    height: 89vh;
+  }
+  .hero-block .opening-statement {
+    grid-column: 1/span 4;
+  }
+  .hero-block .opening-statement h2 {
+    text-align: left;
+  }
 }
 
 .hero-block-variant {
@@ -208,37 +229,64 @@ footer .developer-signature span {
 .intro-block {
   background-color: #171717;
   padding: 7.5rem 0;
+  color: #F9F6EE;
 }
 .intro-block h2 {
-  grid-column: 1/span 4;
-  color: #F9F6EE;
+  grid-column: 6/span 2;
 }
 .intro-block p {
-  grid-column: 1/span 4;
-  color: #F9F6EE;
+  grid-column: 4/span 6;
   text-align: center;
 }
 .intro-block img {
-  grid-column: 2/span 2;
+  grid-column: 6/span 2;
+}
+@media (max-width: 992px) {
+  .intro-block h2 {
+    grid-column: 1/span 4;
+  }
+  .intro-block p {
+    grid-column: 1/span 4;
+    text-align: center;
+  }
+  .intro-block img {
+    grid-column: 2/span 2;
+  }
 }
 
 .project-highlight {
   text-align: center;
   height: 100vh;
   overflow: scroll;
+  padding: 10vh;
 }
 .project-highlight img {
   background: #D9D9D9;
-  min-height: 145px;
-  min-width: 145px;
+  min-height: 100%;
+  min-width: 100%;
 }
 .project-highlight .highlight-card-left {
-  grid-column: 1/span 4;
-  justify-self: start;
+  grid-column: span 3;
 }
 .project-highlight .highlight-card-right {
-  grid-column: 1/span 4;
-  justify-self: end;
+  grid-column: span 3;
+}
+@media (max-width: 992px) {
+  .project-highlight {
+    padding: 0;
+  }
+  .project-highlight img {
+    min-height: 145px;
+    min-width: 145px;
+  }
+  .project-highlight .highlight-card-left {
+    grid-column: 1/span 4;
+    justify-self: start;
+  }
+  .project-highlight .highlight-card-right {
+    grid-column: 1/span 4;
+    justify-self: end;
+  }
 }
 
 .about-content-block {
@@ -308,6 +356,63 @@ footer .developer-signature span {
     display: flex;
     gap: 2rem;
   }
+}
+
+.technology-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 4rem;
+  background-color: #F9F6EE;
+  color: #171717;
+  max-width: 400px;
+}
+.technology-wrapper:hover h2:after {
+  width: 100%;
+  left: 0;
+}
+.technology-wrapper * {
+  color: inherit;
+}
+.technology-wrapper h2 {
+  position: relative;
+}
+.technology-wrapper h2:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  background-color: #8FBC8F;
+  z-index: 3;
+  left: 50%;
+  transition: all 0.5s ease-out;
+}
+.technology-wrapper .info-card {
+  position: absolute;
+  height: 100%;
+  background: #171717;
+  opacity: 0.8;
+  color: #F9F6EE;
+  width: 20vw;
+  padding: 2vw;
+  text-align: center;
+  opacity: 0;
+  z-index: -2;
+}
+.technology-wrapper .info-card.is-active {
+  opacity: 1;
+  z-index: 2;
+}
+.technology-wrapper .info-card h2 {
+  display: inline;
+  text-align: center;
+}
+.technology-wrapper .info-card p {
+  padding-top: 1vh;
 }
 
 /*# sourceMappingURL=style.css.map */

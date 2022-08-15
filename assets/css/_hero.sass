@@ -1,9 +1,24 @@
 .hero-block
-    height: 89vh
+    height: 50vh
+    height: 100%
+    padding: 6.5rem 0
     .profile-picture
         grid-column: 1 / span 4
     .opening-statement
-        grid-column: 1 / span 4
+        grid-column: 9 / span 4
+        justify-self: end
+
+        h2
+            text-align: right
+
+    @media(max-width: 992px)
+        padding: 0
+        height: 89vh
+        .opening-statement
+            grid-column: 1 / span 4
+
+            h2
+                text-align: left
 
 .hero-block-variant
     height: 20vh
