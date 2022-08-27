@@ -22,8 +22,14 @@
 
 .hero-block-variant
     height: 20vh
-    display: flex
-    justify-content: center
-    align-items: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    .container
+        height: 100%
     h1
-        grid-column: 1 / span 4
+        grid-column: 6 / span 2
+    
+    @media(max-width: 992px)
+        h1
+            grid-column: 1 / span 4
