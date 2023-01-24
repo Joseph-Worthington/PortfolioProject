@@ -1,3 +1,5 @@
+let image_url = document.URL;
+
 var projects = [
     {
         'title': 'Riptide Surf Shack',
@@ -9,7 +11,7 @@ var projects = [
         },
         'description' : '',
         'url' : 'url',
-        'img' : ''
+        'img' : '../assets/images/project-images/rating-card.png'
     },
     {
         'title': 'Riptide Surf Shack',

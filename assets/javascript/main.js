@@ -52,22 +52,48 @@ const technologyCard = document.querySelector('.technology-wrapper .info-card');
             
         }
 
+        if(document.querySelector('.projects .container')){
 
-        document.querySelector('.projects .container').insertAdjacentHTML('beforeend','<div class="'+ wrapper +'">\
-        <div class="info-card-img">\
-        <a href="'+ url +'">\
-            <img src="'+img+'" alt=""></div>\
-            <div class="info-card">\
-                <h2>'+ name +'</h2>\
-                <p>'+description+'</p>\
-                <div class="technology-used">\
-                    <ul>\
-                        <li>'+technologyArray['architecture']+'</li>\
-                        <li>'+technologyArray['style']+'</li>\
-                    </ul>\
+            let wrapper = 'project-card';
+            if(counter % 2 === 0){
+                wrapper = 'project-card-reverse'
+            }  
+            document.querySelector('.projects .container').insertAdjacentHTML('beforeend','<div class="'+ wrapper +'">\
+            <div class="info-card-img">\
+            <a href="'+ url +'">\
+                <img src="'+img+'" alt=""></div>\
+                <div class="info-card">\
+                    <h2>'+ name +'</h2>\
+                    <p>'+description+'</p>\
+                    <div class="technology-used">\
+                        <ul>\
+                            <li>'+technologyArray['architecture']+'</li>\
+                            <li>'+technologyArray['style']+'</li>\
+                        </ul>\
+                    </div>\
                 </div>\
-            </div>\
-        </div>');
+            </div>');
+        }else if(document.querySelector('.project-highlight .container')){
+            let wrapper = 'highlight-card-left';
+            if(counter % 2 === 0){
+                wrapper = 'highlight-card-right'
+            }  
+            document.querySelector('.project-highlight .container').insertAdjacentHTML('beforeend','<div class="'+ wrapper +'">\
+            <div class="info-card-img">\
+            <a href="'+ url +'">\
+                <img src="'+img+'" alt=""></div>\
+                <div class="info-card">\
+                    <h2>'+ name +'</h2>\
+                    <p>'+description+'</p>\
+                    <div class="technology-used">\
+                        <ul>\
+                            <li>'+technologyArray['architecture']+'</li>\
+                            <li>'+technologyArray['style']+'</li>\
+                        </ul>\
+                    </div>\
+                </div>\
+            </div>');
+        }
     }
 
 
