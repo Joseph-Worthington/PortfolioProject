@@ -1,5 +1,3 @@
-let image_url = document.URL;
-
 var projects = [
     {
         'title': 'Riptide Surf Shack',

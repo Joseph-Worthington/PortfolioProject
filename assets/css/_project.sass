@@ -6,12 +6,16 @@
     
     a:hover
         scale: 1.2
-    .technology-used
-        ul
-            display: flex
-            gap: 2rem
+
+    .info-card-img
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        padding: 30%
+    
     .project-card
         grid-column: span 4
+        min-width: 100%
         .info-card
             background: $primary
             color: $secondary
@@ -20,7 +24,7 @@
   
     .project-card-reverse
         grid-column: span 4
-
+        min-width: 100%
         .info-card
             background:  $secondary
             color: $primary
@@ -43,6 +47,7 @@
                 left: 45vw
                 top: 50%
                 transform: translate(0, -50%)
+
 
         .project-card-reverse
             grid-column: 1 / span 4
