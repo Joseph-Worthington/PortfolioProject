@@ -152,7 +152,6 @@ header .logo {
   justify-self: start;
   z-index: 100;
   margin: 0;
-  margin-top: 2rem;
 }
 @media (max-width: 992px) {
   header .logo {
@@ -211,7 +210,7 @@ header .logo {
 footer {
   background: #171717;
   width: 100%;
-  padding: 1px;
+  padding: 5vh;
 }
 footer a {
   margin: 0;
@@ -220,10 +219,6 @@ footer img {
   max-height: 5rem;
   max-width: 5rem;
   border: 50%;
-  margin-top: 2rem;
-}
-footer .github {
-  grid-column: 5;
 }
 footer .developer-signature {
   width: 100px;
@@ -246,9 +241,6 @@ footer .developer-signature span {
     max-height: 5rem;
     max-width: 5rem;
     border: 50%;
-  }
-  footer .github {
-    grid-column: 1;
   }
   footer .developer-signature {
     width: 50px;
@@ -424,133 +416,33 @@ footer .developer-signature span {
   padding: 30%;
 }
 .projects .project-card {
+  background: #171717;
+  color: #F9F6EE;
+  padding: 2rem;
+  box-shadow: 1px 2px 2px #666;
   grid-column: span 4;
   min-width: 100%;
 }
 .projects .project-card .info-card {
   background: #171717;
   color: #F9F6EE;
-  padding: 2rem;
-  box-shadow: 1px 2px 2px #666;
 }
-.projects .project-card-reverse {
-  grid-column: span 4;
-  min-width: 100%;
-}
-.projects .project-card-reverse .info-card {
+.projects .reverse {
   background: #F9F6EE;
   color: #171717;
   padding: 2rem;
   box-shadow: 0px 2px 2px 2px rgba(23, 23, 23, 0.5);
+  grid-column: span 4;
+  min-width: 100%;
+}
+.projects .reverse .info-card {
+  background: #F9F6EE;
+  color: #171717;
 }
 @media (max-width: 576px) {
   .projects .project-card {
     grid-column: 1/span 4;
-    justify-self: start;
-    position: relative;
   }
-  .projects .project-card .info-card {
-    background: #171717;
-    color: #F9F6EE;
-  }
-  .projects .project-card .info-card-img {
-    position: absolute;
-    height: 40vw;
-    width: 40vw;
-    background-color: #8FBC8F;
-    left: 45vw;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-  .projects .project-card-reverse {
-    grid-column: 1/span 4;
-    justify-self: end;
-    position: relative;
-  }
-  .projects .project-card-reverse .info-card {
-    background: #F9F6EE;
-    color: #171717;
-  }
-  .projects .project-card-reverse .info-card-img {
-    position: absolute;
-    height: 40vw;
-    width: 40vw;
-    background-color: #8FBC8F;
-    right: 45vw;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-  .projects .info-card {
-    max-width: 65vw;
-    padding: 0 2rem;
-    opacity: 0.8;
-    position: relative;
-  }
-  .projects .info-card h2 {
-    padding: 2rem 0;
-  }
-  .projects .info-card ul {
-    padding: 2rem 0;
-    display: flex;
-    gap: 2rem;
-  }
-}
-
-.technology-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 4rem;
-  background-color: #F9F6EE;
-  color: #171717;
-  max-width: 400px;
-}
-.technology-wrapper:hover h2:after {
-  width: 100%;
-  left: 0;
-}
-.technology-wrapper * {
-  color: inherit;
-}
-.technology-wrapper h2 {
-  position: relative;
-}
-.technology-wrapper h2:after {
-  position: absolute;
-  display: block;
-  content: "";
-  width: 0;
-  height: 0.2rem;
-  background-color: #8FBC8F;
-  z-index: 3;
-  left: 50%;
-  transition: all 0.5s ease-out;
-}
-.technology-wrapper .info-card {
-  position: absolute;
-  height: 100%;
-  background: #171717;
-  opacity: 0.8;
-  color: #F9F6EE;
-  width: 20vw;
-  padding: 2vw;
-  text-align: center;
-  opacity: 0;
-  z-index: -2;
-}
-.technology-wrapper .info-card.is-active {
-  opacity: 1;
-  z-index: 2;
-}
-.technology-wrapper .info-card h2 {
-  display: inline;
-  text-align: center;
-}
-.technology-wrapper .info-card p {
-  padding-top: 1vh;
 }
 
 /*# sourceMappingURL=style.css.map */

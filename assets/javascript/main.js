@@ -47,11 +47,11 @@ const technologyCard = document.querySelector('.technology-wrapper .info-card');
 
             let wrapper = 'project-card';
             if(counter % 2 === 0){
-                wrapper = 'project-card-reverse'
+                wrapper = 'project-card reverse'
             }  
             document.querySelector('.projects .container').insertAdjacentHTML('beforeend','<div class="'+ wrapper +'">\
+            <a target="_blank" href="'+ url +'">\
             <div class="info-card-img" style="background-image:url('+img+')"></div>\
-            <a href="'+ url +'">\
                 <div class="info-card">\
                     <h2>'+ name +'</h2>\
                     <p>'+description+'</p>\
@@ -59,9 +59,11 @@ const technologyCard = document.querySelector('.technology-wrapper .info-card');
                         <ul>\
                             <li>'+technologyArray['architecture']+'</li>\
                             <li>'+technologyArray['style']+'</li>\
+                            <li>'+technologyArray['programming']+'</li>\
                         </ul>\
                     </div>\
                 </div>\
+                </a>\
             </div>');
         }
     }
@@ -92,6 +94,7 @@ const technologyCard = document.querySelector('.technology-wrapper .info-card');
                         <ul>\
                             <li>'+technologyArray['architecture']+'</li>\
                             <li>'+technologyArray['style']+'</li>\
+                            <li>'+technologyArray['programming']+'</li>\
                         </ul>\
                     </div>\
                 </div>\
